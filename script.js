@@ -3,12 +3,19 @@ function compute()
 	document.getElementById("result").innerHTML = "";
     var principal = document.getElementById("principal").value;
     //Checks if principal is negative then alert and focus on principal
-    if (parseFloat(principal)<=0){
+    if (! principal){
     	window.alert("Enter a positive number");
     	document.getElementById("principal").focus();
 
     }
-    else{
+
+    else if (parseFloat(principal)<=0){
+    	window.alert("Enter a positive number");
+    	document.getElementById("principal").focus();
+
+    }
+    else
+    {
     var rate = document.getElementById("rate").value;
     var years = document.getElementById("years").value;
     var interest = principal * years * rate /100;
